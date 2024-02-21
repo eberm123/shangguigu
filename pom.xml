@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.ebchinatech.kylincloud</groupId>
+    <artifactId>kylincloud-demoService</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <parent>
+        <groupId>com.ebchinatech</groupId>
+        <artifactId>KylinCloud</artifactId>
+        <version>1.0.4</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.ebchinatech</groupId>
+            <artifactId>kylincloud-starter</artifactId>
+            <version>1.0.4</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba</groupId>-->
+<!--            <artifactId>fastjson</artifactId>-->
+<!--            <version>1.2.66</version>-->
+<!--        </dependency>-->
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- 瘦包 -->
+            <!--<plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    &lt;!&ndash;表示编译版本配置有效&ndash;&gt;
+                    <fork>true</fork>
+                    &lt;!&ndash;引入第三方jar包时,不添加则引入的第三方jar不会被打入jar包中&ndash;&gt;
+                    <includeSystemScope>true</includeSystemScope>
+                    &lt;!&ndash;排除第三方jar文件&ndash;&gt;
+                    <includes>
+                        <include>
+                            <groupId>nothing</groupId>
+                            <artifactId>nothing</artifactId>
+                        </include>
+                    </includes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    &lt;!&ndash; 源代码使用的JDK版本 &ndash;&gt;
+                    <source>${java.version}</source>
+                    &lt;!&ndash; 需要生成的目标class文件的编译版本 &ndash;&gt;
+                    <target>${java.version}</target>
+                    &lt;!&ndash; 字符集编码 &ndash;&gt;
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            &lt;!&ndash;复制到哪个路径，${project.build.directory} 缺省为 target，其他内置参数见下面解释&ndash;&gt;
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                            <overWriteReleases>false</overWriteReleases>
+                            <overWriteSnapshots>false</overWriteSnapshots>
+                            <overWriteIfNewer>true</overWriteIfNewer>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            &lt;!&ndash; 是否要把第三方jar加入到类构建路径 &ndash;&gt;
+                            <addClasspath>true</addClasspath>
+                            &lt;!&ndash; 外部依赖jar包的最终位置 &ndash;&gt;
+                            <classpathPrefix>../lib/</classpathPrefix>
+                            &lt;!&ndash; 项目启动类 &ndash;&gt;
+                            <mainClass>com.ebchinatech.kylincloud.KylinCloudDemo</mainClass>
+                        </manifest>
+                    </archive>
+                    &lt;!&ndash;资源文件不打进jar包中，做到配置跟项目分离的效果&ndash;&gt;
+                    <excludes>
+                        &lt;!&ndash; 业务jar中过滤application.properties/yml文件，在jar包外控制 &ndash;&gt;
+                        <exclude>application.yml</exclude>
+                        <exclude>application-dev.yml</exclude>
+                        <exclude>application-prod.yml</exclude>
+                        <exclude>application-external.yml</exclude>
+                        <exclude>logback.xml</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>-->
+            <!-- 瘦包 End -->
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <!--Snapshot-->
+        <snapshotRepository>
+            <id>rdc-snapshots</id>
+            <url>https://packages.aliyun.com/maven/repository/2240789-snapshot-INlSwP/</url>
+        </snapshotRepository>
+        <!--Releases-->
+        <repository>
+            <id>rdc-releases</id>
+            <url>https://packages.aliyun.com/maven/repository/2240789-release-jlag3U/</url>
+        </repository>
+    </distributionManagement>
+</project>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- 日志存放路径 -->
+    <property name="log.path" value="/Users/weifengli/workspace/kylinCloud/logs/demoService"/>
+    <!-- 日志输出格式 -->
+    <property name="log.pattern" value="%d{yyyy-MM-dd HH:mm:ss} [%thread] %highlight(%-5level) %cyan(%logger{50}) - %highlight(%msg) %n"/>
+
+    <!-- 控制台输出 -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${log.pattern}</pattern>
+        </encoder>
+    </appender>
+
+    <!-- KylinCloud INFO-->
+    <appender name="kylincloud-platform-info" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/platform-info.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/kylincloud-platform/platform-info/%d{yyyy-MM}/platform-info-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>90</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${log.pattern}</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+    <!-- KylinCloud ERROR -->
+    <appender name="kylincloud-platform-error" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/platform-error.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/kylincloud-platform/platform-error/%d{yyyy-MM}/platform-error-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>90</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${log.pattern}</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+    <!-- 系统模块日志级别 -->
+    <logger name="com.ebchinatech.kylincloud" level="info" />
+    <!-- Spring日志级别 -->
+    <logger name="org.springframework" level="warn" />
+
+    <!-- 控制台日志 -->
+    <root level="info">
+        <appender-ref ref="console" />
+    </root>
+
+    <!-- 系统操作日志 -->
+    <root level="info">
+        <appender-ref ref="kylincloud-platform-info"/>
+        <appender-ref ref="kylincloud-platform-error"/>
+    </root>
+
+</configuration>

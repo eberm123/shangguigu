@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ebchinatech.kylincloud.mapper.NeedBasicInformationMapper">
+    
+    <resultMap type="NeedBasicInformation" id="NeedBasicInformationResult">
+        <result property="id"    column="id"    />
+        <result property="businessManager"    column="business_manager"    />
+        <result property="businessManagerId"    column="business_manager_id"    />
+        <result property="demandName"    column="demand_name"    />
+        <result property="demandType"    column="demand_type"    />
+        <result property="demandBackground"    column="demand_background"    />
+        <result property="demandContent"    column="demand_content"    />
+        <result property="businessDepartment"    column="business_department"    />
+        <result property="businessDepartmentId"    column="business_department_id"    />
+        <result property="demandNumber"    column="demand_number"    />
+        <result property="businessRequirementsStatement"    column="business_requirements_statement"    />
+        <result property="reportPpt"    column="report_ppt"    />
+        <result property="other"    column="other"    />
+        <result property="businessStatus"    column="business_status"    />
+        <result property="isVoid"    column="is_void"    />
+        <result property="meetingId"    column="meeting_id"    />
+        <result property="meetingName"    column="meeting_name"    />
+        <result property="demandGroupNumber"    column="demand_group_number"    />
+        <result property="attendanceStatus"    column="attendance_status"    />
+        <result property="demandTeamApproveDate"    column="demand_team_approve_date"    />
+        <result property="applyTime"    column="apply_time"    />
+        <result property="procInstId"    column="proc_inst_id"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createDept"    column="create_dept"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateDept"    column="update_dept"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="remark"    column="remark"    />
+        <result property="isDel"    column="is_del"    />
+        <result property="isCreate"    column="is_create"    />
+    </resultMap>
+    <sql id="selectNeedBasicInformationVo">
+        select id, business_manager,business_manager_id, demand_name, demand_type, demand_background, demand_content,
+        business_department, business_department_id, demand_number, business_status, is_void, meeting_id,
+        apply_time, proc_inst_id, remark, is_del, is_create, create_by, create_dept, create_time, update_by, update_dept, update_time
+        from need_basic_information
+ </sql>
+
+    <select id="selectNeedBasicInformationList" parameterType="NeedBasicInformation" resultMap="NeedBasicInformationResult">
+        <include refid="selectNeedBasicInformationVo"/>
+        <where>
+            is_del = 0
+            <if test="businessManager != null  and businessManager != ''"> and business_manager like concat('%',#{businessManager}, '%')</if>
+            <if test="businessManagerId != null  and businessManagerId != ''"> and business_manager_id = #{businessManagerId}</if>
+            <if test="demandName != null  and demandName != ''"> and demand_name like concat('%', #{demandName}, '%')</if>
+            <if test="demandType != null  and demandType != ''"> and demand_type = #{demandType}</if>
+            <if test="demandBackground != null  and demandBackground != ''"> and demand_background like concat('%',#{demandBackground}, '%')</if>
+            <if test="demandContent != null  and demandContent != ''"> and demand_content = like concat('%',#{demandContent}, '%')</if>
+            <if test="businessDepartment != null  and businessDepartment != ''"> and business_department like concat('%',#{businessDepartment}, '%')</if>
+            <if test="businessDepartmentId != null  and businessDepartmentId != ''"> and business_department_id = #{businessDepartmentId}</if>
+            <if test="demandNumber != null  and demandNumber != ''"> and demand_number = like concat('%',#{demandNumber}, '%')</if>
+            <if test="businessStatus != null  and businessStatus != ''"> and business_status like concat('%',#{businessStatus}, '%')</if>
+            <if test="isVoid != null and isVoid != ''"> and is_void = #{isVoid}</if>
+            <if test="meetingId != null  and meetingId != ''"> and meeting_id = #{meetingId}</if>
+            <if test="applyTime != null"> and apply_time like concat('%',date_format(#{applyTime},'%Y-%m-%d'), '%')</if>
+            <if test="procInstId != null and procInstId != ''"> and proc_inst_id = #{procInstId}</if>
+            <if test="createDept != null and createDept != ''"> and create_dept = #{createDept}</if>
+            <if test="createTime != null"> and create_time = #{createTime}</if>
+            <if test="updateBy != null and updateBy != ''"> and update_by = #{updateBy}</if>
+            <if test="updateDept != null and updateDept != ''"> and update_dept = #{updateDept}</if>
+            <if test="updateTime != null"> and update_time = #{updateTime}</if>
+            <if test="remark != null and remark != ''"> and remark = #{remark}</if>
+            <if test="isCreate != null and isCreate != ''"> and is_create = #{isCreate}</if>
+        </where>
+        order by create_time desc
+    </select>
+
+    <select id="selectNeedBasicInformationIsVoidList" parameterType="String" resultMap="NeedBasicInformationResult">
+        select id,demand_name,demand_type,demand_number,business_manager,business_manager_id
+        from need_basic_information
+        <where>
+            is_del = 0 and is_void = "否" and business_status = "审核通过"
+            <if test="array != null and array != ''">
+                and id in
+                <foreach item="id" collection="array" open="(" separator="," close=")">
+                    #{id}
+                </foreach>
+            </if>
+        </where>
+        order by create_time desc
+    </select>
+    
+    <select id="selectNeedBasicInformationById" parameterType="Integer" resultMap="NeedBasicInformationResult">
+        <include refid="selectNeedBasicInformationVo"/>
+        where id = #{id}
+    </select>
+
+    <select id="selectNeedBasicInformationByMeetingId" parameterType="com.ebchinatech.kylincloud.domain.dto.NeedMeetingDto" resultMap="NeedBasicInformationResult">
+        select id,demand_name,demand_number,business_manager,business_department,business_status, is_void,proc_inst_id
+        from need_basic_information
+        <where>
+            is_del = 0
+            <if test="meetingId != null and meetingId != ''">
+                and meeting_id = #{meetingId}
+            </if>
+            <if test="businessStatus != null and businessStatus != ''">
+                and (business_status = #{businessStatus} or business_status = '作废')
+            </if>
+            <if test="idList != null and idList != ''">
+                and id in
+                <foreach item="id" collection="idList" open="(" separator="," close=")">
+                    #{id}
+                </foreach>
+            </if>
+        </where>
+    </select>
+        
+    <insert id="insertNeedBasicInformation" parameterType="NeedBasicInformation" useGeneratedKeys="true" keyProperty="id">
+        insert into need_basic_information
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="businessManager != null  and businessManager != ''">business_manager,</if>
+            <if test="businessManagerId != null  and businessManagerId != ''">business_manager_id,</if>
+            <if test="demandName != null  and demandName != ''">demand_name,</if>
+            <if test="demandType != null  and demandType != ''">demand_type,</if>
+            <if test="demandBackground != null  and demandBackground != ''">demand_background,</if>
+            <if test="demandContent != null  and demandContent != ''">demand_content,</if>
+            <if test="businessDepartment != null  and businessDepartment != ''">business_department,</if>
+            <if test="businessDepartmentId != null  and businessDepartmentId != ''">business_department_id,</if>
+            <if test="demandNumber != null  and demandNumber != ''">demand_number,</if>
+            <if test="businessStatus != null  and businessStatus != ''">business_status,</if>
+            <if test="isVoid != null and isVoid != ''">is_void,</if>
+            <if test="meetingId != null  and meetingId != ''">meeting_id,</if>
+            <if test="applyTime != null">apply_time,</if>
+            <if test="procInstId != null and procInstId != ''">proc_inst_id,</if>
+            <if test="createBy != null and createBy != ''">create_by,</if>
+            <if test="createDept != null and createDept != ''">create_dept,</if>
+            <if test="createTime != null ">create_time,</if>
+            <if test="updateBy != null and updateBy != ''">update_by,</if>
+            <if test="updateDept != null and updateDept != ''">update_dept,</if>
+            <if test="updateTime != null ">update_time,</if>
+            <if test="remark != null and remark != ''">demand_team_approve_date,</if>
+            <if test="isDel != null and isDel != ''">is_del,</if>
+            <if test="isCreate != null and isCreate != ''">is_create,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="businessManager != null  and businessManager != ''">#{businessManager},</if>
+            <if test="businessManagerId != null  and businessManagerId != ''">#{businessManagerId},</if>
+            <if test="demandName != null  and demandName != ''">#{demandName},</if>
+            <if test="demandType != null  and demandType != ''">#{demandType},</if>
+            <if test="demandBackground != null  and demandBackground != ''">#{demandBackground},</if>
+            <if test="demandContent != null  and demandContent != ''">#{demandContent},</if>
+            <if test="businessDepartment != null  and businessDepartment != ''">#{businessDepartment},</if>
+            <if test="businessDepartmentId != null  and businessDepartmentId != ''">#{businessDepartmentId},</if>
+            <if test="demandNumber != null  and demandNumber != ''">#{demandNumber},</if>
+            <if test="businessStatus != null  and businessStatus != ''">#{businessStatus},</if>
+            <if test="isVoid != null and isVoid != ''">#{isVoid},</if>
+            <if test="meetingId != null  and meetingId != ''">#{meetingId},</if>
+            <if test="applyTime != null">#{applyTime},</if>
+            <if test="procInstId != null and procInstId != ''">#{procInstId},</if>
+            <if test="createBy != null and createBy != ''">#{createBy},</if>
+            <if test="createDept != null and createDept != ''">#{createDept},</if>
+            <if test="createTime != null ">#{createTime},</if>
+            <if test="updateBy != null and updateBy != ''">#{updateBy},</if>
+            <if test="updateDept != null and updateDept != ''">#{updateDept},</if>
+            <if test="updateTime != null ">#{updateTime},</if>
+            <if test="remark != null and remark != ''">#{remark},</if>
+            <if test="isDel != null and isDel != ''">#{isDel},</if>
+            <if test="isCreate != null and isCreate != ''">#{isCreate},</if>
+         </trim>
+    </insert>
+
+    <select id="selectNeedBasicInformationCount" parameterType="String" resultType="String">
+        select demand_number from need_basic_information where date_format(apply_time,'%Y') = #{param} order by apply_time desc limit 1
+    </select>
+
+    <update id="updateNeedBasicInformation" parameterType="NeedBasicInformation">
+        update need_basic_information
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="businessManager != null  and businessManager != ''">business_manager = #{businessManager},</if>
+            <if test="businessManagerId != null  and businessManagerId != ''">business_manager_id = #{businessManagerId},</if>
+            <if test="demandName != null  and demandName != ''">demand_name = #{demandName},</if>
+            <if test="demandType != null  and demandType != ''">demand_type = #{demandType},</if>
+            <if test="demandBackground != null  and demandBackground != ''">demand_background = #{demandBackground},</if>
+            <if test="demandContent != null  and demandContent != ''">demand_content = #{demandContent},</if>
+            <if test="businessDepartment != null  and businessDepartment != ''">business_department = #{businessDepartment},</if>
+            <if test="businessDepartmentId != null  and businessDepartmentId != ''">business_department_id = #{businessDepartmentId},</if>
+            <if test="demandNumber != null  and demandNumber != ''">demand_number = #{demandNumber},</if>
+            <if test="createTime != null ">create_time = #{createTime},</if>
+            <if test="businessStatus != null  and businessStatus != ''">business_status = #{businessStatus},</if>
+            <if test="isVoid != null and isVoid != ''">is_void = #{isVoid},</if>
+            <if test="meetingId != null  and meetingId != ''">meeting_id = #{meetingId},</if>
+            <if test="applyTime != null">apply_time = #{applyTime},</if>
+            <if test="procInstId != null and procInstId != ''">proc_inst_id = #{procInstId},</if>
+            <if test="updateBy != null  and updateBy != ''">update_by = #{updateBy},</if>
+            <if test="updateDept != null and updateDept != ''">update_dept = #{updateDept},</if>
+            <if test="updateTime != null ">update_time = #{updateTime},</if>
+            <if test="remark != null  and remark != ''">remark = #{remark},</if>
+            <if test="isCreate != null  and isCreate != ''">is_create = #{isCreate},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteNeedBasicInformationById" parameterType="Integer">
+        update need_basic_information set is_del = 1 where id = #{id}
+    </delete>
+
+    <update id="closeNeedBasicInformationByIds" parameterType="Integer">
+        update need_basic_information set is_void = '是', business_status = '作废' where id = #{id}
+    </update>
+
+
+    <update id="updateNeedBasicInformationbusinessStatusById" parameterType="com.ebchinatech.kylincloud.domain.vo.NeedStatusVo">
+        update need_basic_information set business_status = #{businessStatus}
+        where id = #{id}
+    </update>
+
+    <update id="updateNeedBasicInformationMeetingById" parameterType="Integer">
+        update need_basic_information set meeting_id = NULL
+        where id = #{id}
+    </update>
+
+    <select id="selectNeedListByIds" parameterType="String" resultMap="NeedBasicInformationResult">
+        select id,demand_name,demand_type,demand_number,business_manager,business_manager_id
+        from need_basic_information
+        <where>
+            1 = 1
+            <if test="array != null and array != ''">
+                and id in
+                <foreach item="id" collection="array" open="(" separator="," close=")">
+                    #{id}
+                </foreach>
+            </if>
+        </where>
+        order by create_time desc
+    </select>
+</mapper>

@@ -1,0 +1,38 @@
+kylin:
+  profile: /home/kylincloud/file
+  adminId: admin #管理员ID
+
+# MybatisPlu Settings
+mybatis-plus:
+  typeAliasesPackage: com.ebchinatech.**.domain
+  mapperLocations: classpath*:mybatis/**/*Mapper.xml
+  configLocation: classpath:mybatis/mybatis-config.xml
+  global-config:
+    banner: false
+
+# PageHelper Setting
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: false  #取消自动分页
+
+# Swagger Config
+swagger:
+  enabled: true
+  host: localhost:18001
+  title: KylinCloud-Demo API Docs
+  version: V2.0.0 #版本
+  description: 基础平台Demo服务接口文档 #描述
+  license: Powered By Kylin
+#  licenseUrl: # 许可证URL
+#  termsOfServiceUrl: #服务条款URL
+#  host: #host信息
+#  contact: #联系人信息
+#  basePackage: #swagger会解析的包路径
+#  basePath: #swagger会解析的url规则
+#  excludePath: #在basePath基础上需要排除的url规则
+
+feign:
+  httpclient:
+    enabled: true
+

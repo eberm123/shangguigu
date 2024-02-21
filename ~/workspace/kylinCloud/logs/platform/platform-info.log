@@ -1,0 +1,90 @@
+2022-09-15 18:38:28 [main] [34mINFO [0;39m [36mc.a.n.p.auth.spi.client.ClientAuthPluginManager[0;39m - [34m[ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.[0;39m 
+2022-09-15 18:38:28 [main] [34mINFO [0;39m [36mc.a.n.p.auth.spi.client.ClientAuthPluginManager[0;39m - [34m[ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.[0;39m 
+2022-09-15 18:38:30 [main] [34mINFO [0;39m [36mcom.ebchinatech.kylincloud.KylinCloudDemo[0;39m - [34mThe following 1 profile is active: "dev"[0;39m 
+2022-09-15 18:38:34 [main] [34mINFO [0;39m [36morg.apache.coyote.http11.Http11NioProtocol[0;39m - [34mInitializing ProtocolHandler ["http-nio-18001"][0;39m 
+2022-09-15 18:38:34 [main] [34mINFO [0;39m [36morg.apache.catalina.core.StandardService[0;39m - [34mStarting service [Tomcat][0;39m 
+2022-09-15 18:38:34 [main] [34mINFO [0;39m [36morg.apache.catalina.core.StandardEngine[0;39m - [34mStarting Servlet engine: [Apache Tomcat/9.0.64][0;39m 
+2022-09-15 18:38:34 [main] [34mINFO [0;39m [36mo.a.c.core.ContainerBase.[Tomcat].[localhost].[/][0;39m - [34mInitializing Spring embedded WebApplicationContext[0;39m 
+2022-09-15 18:38:35 [main] [34mINFO [0;39m [36mcom.alibaba.druid.pool.DruidDataSource[0;39m - [34m{dataSource-1,master} inited[0;39m 
+2022-09-15 18:38:36 [main] [34mINFO [0;39m [36mcom.alibaba.druid.pool.DruidDataSource[0;39m - [34m{dataSource-2,slave} inited[0;39m 
+2022-09-15 18:38:36 [main] [34mINFO [0;39m [36mc.b.dynamic.datasource.DynamicRoutingDataSource[0;39m - [34mdynamic-datasource - add a datasource named [slave] success[0;39m 
+2022-09-15 18:38:36 [main] [34mINFO [0;39m [36mc.b.dynamic.datasource.DynamicRoutingDataSource[0;39m - [34mdynamic-datasource - add a datasource named [master] success[0;39m 
+2022-09-15 18:38:36 [main] [34mINFO [0;39m [36mc.b.dynamic.datasource.DynamicRoutingDataSource[0;39m - [34mdynamic-datasource initial loaded [2] datasource,primary datasource named [master][0;39m 
+2022-09-15 18:38:39 [main] [34mINFO [0;39m [36mc.a.n.p.auth.spi.client.ClientAuthPluginManager[0;39m - [34m[ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.[0;39m 
+2022-09-15 18:38:39 [main] [34mINFO [0;39m [36mc.a.n.p.auth.spi.client.ClientAuthPluginManager[0;39m - [34m[ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.[0;39m 
+2022-09-15 18:38:40 [main] [34mINFO [0;39m [36morg.apache.coyote.http11.Http11NioProtocol[0;39m - [34mStarting ProtocolHandler ["http-nio-18001"][0;39m 
+2022-09-15 18:38:41 [main] [34mINFO [0;39m [36mc.a.cloud.nacos.registry.NacosServiceRegistry[0;39m - [34mnacos registry, DEFAULT_GROUP kylincloud-demo 172.31.51.62:18001 register finished[0;39m 
+2022-09-15 18:38:41 [main] [34mINFO [0;39m [36mcom.ebchinatech.kylincloud.KylinCloudDemo[0;39m - [34mStarted KylinCloudDemo in 13.841 seconds (JVM running for 15.093)[0;39m 
+2022-09-15 18:38:41 [main] [34mINFO [0;39m [36mc.a.cloud.nacos.refresh.NacosContextRefresher[0;39m - [34mlistening config: dataId=kylincloud-demo, group=DEFAULT_GROUP[0;39m 
+2022-09-15 18:38:41 [main] [34mINFO [0;39m [36mc.a.cloud.nacos.refresh.NacosContextRefresher[0;39m - [34mlistening config: dataId=kylincloud-demo-dev.yml, group=DEFAULT_GROUP[0;39m 
+2022-09-15 18:38:41 [main] [34mINFO [0;39m [36mc.a.cloud.nacos.refresh.NacosContextRefresher[0;39m - [34mlistening config: dataId=kylincloud-demo.yml, group=DEFAULT_GROUP[0;39m 
+2022-09-15 18:38:41 [RMI TCP Connection(2)-172.31.51.62] [34mINFO [0;39m [36mo.a.c.core.ContainerBase.[Tomcat].[localhost].[/][0;39m - [34mInitializing Spring DispatcherServlet 'dispatcherServlet'[0;39m 
+2022-09-16 09:30:52 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mc.a.cloud.nacos.registry.NacosServiceRegistry[0;39m - [34mDe-registering from Nacos Server now...[0;39m 
+2022-09-16 09:30:52 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mc.a.cloud.nacos.registry.NacosServiceRegistry[0;39m - [34mDe-registration finished.[0;39m 
+2022-09-16 09:30:53 [SpringApplicationShutdownHook] [34mINFO [0;39m [36msys-user[0;39m - [34m====关闭后台任务任务线程池====[0;39m 
+2022-09-16 09:30:53 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mc.b.dynamic.datasource.DynamicRoutingDataSource[0;39m - [34mdynamic-datasource start closing ....[0;39m 
+2022-09-16 09:30:53 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.alibaba.druid.pool.DruidDataSource[0;39m - [34m{dataSource-2} closing ...[0;39m 
+2022-09-16 09:30:53 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.alibaba.druid.pool.DruidDataSource[0;39m - [34m{dataSource-2} closed[0;39m 
+2022-09-16 09:30:53 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.alibaba.druid.pool.DruidDataSource[0;39m - [34m{dataSource-1} closing ...[0;39m 
+2022-09-16 09:30:53 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.alibaba.druid.pool.DruidDataSource[0;39m - [34m{dataSource-1} closed[0;39m 
+2022-09-16 09:30:53 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mc.b.dynamic.datasource.DynamicRoutingDataSource[0;39m - [34mdynamic-datasource all closed success,bye[0;39m 
+2022-09-16 09:31:15 [main] [34mINFO [0;39m [36mc.a.n.p.auth.spi.client.ClientAuthPluginManager[0;39m - [34m[ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.[0;39m 
+2022-09-16 09:31:15 [main] [34mINFO [0;39m [36mc.a.n.p.auth.spi.client.ClientAuthPluginManager[0;39m - [34m[ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.[0;39m 
+2022-09-16 09:31:17 [main] [34mINFO [0;39m [36mcom.ebchinatech.kylincloud.KylinCloudDemo[0;39m - [34mThe following 1 profile is active: "dev"[0;39m 
+2022-09-16 09:31:22 [main] [34mINFO [0;39m [36morg.apache.coyote.http11.Http11NioProtocol[0;39m - [34mInitializing ProtocolHandler ["http-nio-18001"][0;39m 
+2022-09-16 09:31:22 [main] [34mINFO [0;39m [36morg.apache.catalina.core.StandardService[0;39m - [34mStarting service [Tomcat][0;39m 
+2022-09-16 09:31:22 [main] [34mINFO [0;39m [36morg.apache.catalina.core.StandardEngine[0;39m - [34mStarting Servlet engine: [Apache Tomcat/9.0.64][0;39m 
+2022-09-16 09:31:23 [main] [34mINFO [0;39m [36mo.a.c.core.ContainerBase.[Tomcat].[localhost].[/][0;39m - [34mInitializing Spring embedded WebApplicationContext[0;39m 
+2022-09-16 09:31:24 [main] [34mINFO [0;39m [36mcom.alibaba.druid.pool.DruidDataSource[0;39m - [34m{dataSource-1,master} inited[0;39m 
+2022-09-16 09:31:24 [main] [34mINFO [0;39m [36mcom.alibaba.druid.pool.DruidDataSource[0;39m - [34m{dataSource-2,slave} inited[0;39m 
+2022-09-16 09:31:24 [main] [34mINFO [0;39m [36mc.b.dynamic.datasource.DynamicRoutingDataSource[0;39m - [34mdynamic-datasource - add a datasource named [slave] success[0;39m 
+2022-09-16 09:31:24 [main] [34mINFO [0;39m [36mc.b.dynamic.datasource.DynamicRoutingDataSource[0;39m - [34mdynamic-datasource - add a datasource named [master] success[0;39m 
+2022-09-16 09:31:24 [main] [34mINFO [0;39m [36mc.b.dynamic.datasource.DynamicRoutingDataSource[0;39m - [34mdynamic-datasource initial loaded [2] datasource,primary datasource named [master][0;39m 
+2022-09-16 09:31:28 [main] [34mINFO [0;39m [36mc.a.n.p.auth.spi.client.ClientAuthPluginManager[0;39m - [34m[ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.[0;39m 
+2022-09-16 09:31:28 [main] [34mINFO [0;39m [36mc.a.n.p.auth.spi.client.ClientAuthPluginManager[0;39m - [34m[ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.[0;39m 
+2022-09-16 09:31:30 [main] [34mINFO [0;39m [36morg.apache.coyote.http11.Http11NioProtocol[0;39m - [34mStarting ProtocolHandler ["http-nio-18001"][0;39m 
+2022-09-16 09:31:30 [main] [34mINFO [0;39m [36mc.a.cloud.nacos.registry.NacosServiceRegistry[0;39m - [34mnacos registry, DEFAULT_GROUP kylincloud-demo 172.31.51.62:18001 register finished[0;39m 
+2022-09-16 09:31:30 [main] [34mINFO [0;39m [36mcom.ebchinatech.kylincloud.KylinCloudDemo[0;39m - [34mStarted KylinCloudDemo in 16.352 seconds (JVM running for 20.401)[0;39m 
+2022-09-16 09:31:30 [main] [34mINFO [0;39m [36mc.a.cloud.nacos.refresh.NacosContextRefresher[0;39m - [34mlistening config: dataId=kylincloud-demo, group=DEFAULT_GROUP[0;39m 
+2022-09-16 09:31:30 [main] [34mINFO [0;39m [36mc.a.cloud.nacos.refresh.NacosContextRefresher[0;39m - [34mlistening config: dataId=kylincloud-demo-dev.yml, group=DEFAULT_GROUP[0;39m 
+2022-09-16 09:31:30 [main] [34mINFO [0;39m [36mc.a.cloud.nacos.refresh.NacosContextRefresher[0;39m - [34mlistening config: dataId=kylincloud-demo.yml, group=DEFAULT_GROUP[0;39m 
+2022-09-16 09:31:31 [RMI TCP Connection(5)-172.31.51.62] [34mINFO [0;39m [36mo.a.c.core.ContainerBase.[Tomcat].[localhost].[/][0;39m - [34mInitializing Spring DispatcherServlet 'dispatcherServlet'[0;39m 
+2022-09-16 09:50:01 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mc.a.cloud.nacos.registry.NacosServiceRegistry[0;39m - [34mDe-registering from Nacos Server now...[0;39m 
+2022-09-16 09:50:01 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mc.a.cloud.nacos.registry.NacosServiceRegistry[0;39m - [34mDe-registration finished.[0;39m 
+2022-09-16 09:50:01 [SpringApplicationShutdownHook] [34mINFO [0;39m [36msys-user[0;39m - [34m====关闭后台任务任务线程池====[0;39m 
+2022-09-16 09:50:01 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mc.b.dynamic.datasource.DynamicRoutingDataSource[0;39m - [34mdynamic-datasource start closing ....[0;39m 
+2022-09-16 09:50:01 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.alibaba.druid.pool.DruidDataSource[0;39m - [34m{dataSource-2} closing ...[0;39m 
+2022-09-16 09:50:01 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.alibaba.druid.pool.DruidDataSource[0;39m - [34m{dataSource-2} closed[0;39m 
+2022-09-16 09:50:01 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.alibaba.druid.pool.DruidDataSource[0;39m - [34m{dataSource-1} closing ...[0;39m 
+2022-09-16 09:50:01 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.alibaba.druid.pool.DruidDataSource[0;39m - [34m{dataSource-1} closed[0;39m 
+2022-09-16 09:50:01 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mc.b.dynamic.datasource.DynamicRoutingDataSource[0;39m - [34mdynamic-datasource all closed success,bye[0;39m 
+2022-09-16 10:00:37 [main] [34mINFO [0;39m [36mc.a.n.p.auth.spi.client.ClientAuthPluginManager[0;39m - [34m[ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.[0;39m 
+2022-09-16 10:00:37 [main] [34mINFO [0;39m [36mc.a.n.p.auth.spi.client.ClientAuthPluginManager[0;39m - [34m[ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.[0;39m 
+2022-09-16 10:00:39 [main] [34mINFO [0;39m [36mcom.ebchinatech.kylincloud.KylinCloudDemo[0;39m - [34mThe following 1 profile is active: "dev"[0;39m 
+2022-09-16 10:00:42 [main] [34mINFO [0;39m [36morg.apache.coyote.http11.Http11NioProtocol[0;39m - [34mInitializing ProtocolHandler ["http-nio-18001"][0;39m 
+2022-09-16 10:00:42 [main] [34mINFO [0;39m [36morg.apache.catalina.core.StandardService[0;39m - [34mStarting service [Tomcat][0;39m 
+2022-09-16 10:00:42 [main] [34mINFO [0;39m [36morg.apache.catalina.core.StandardEngine[0;39m - [34mStarting Servlet engine: [Apache Tomcat/9.0.64][0;39m 
+2022-09-16 10:00:42 [main] [34mINFO [0;39m [36mo.a.c.core.ContainerBase.[Tomcat].[localhost].[/][0;39m - [34mInitializing Spring embedded WebApplicationContext[0;39m 
+2022-09-16 10:00:43 [main] [34mINFO [0;39m [36mcom.alibaba.druid.pool.DruidDataSource[0;39m - [34m{dataSource-1,master} inited[0;39m 
+2022-09-16 10:00:43 [main] [34mINFO [0;39m [36mcom.alibaba.druid.pool.DruidDataSource[0;39m - [34m{dataSource-2,slave} inited[0;39m 
+2022-09-16 10:00:43 [main] [34mINFO [0;39m [36mc.b.dynamic.datasource.DynamicRoutingDataSource[0;39m - [34mdynamic-datasource - add a datasource named [slave] success[0;39m 
+2022-09-16 10:00:43 [main] [34mINFO [0;39m [36mc.b.dynamic.datasource.DynamicRoutingDataSource[0;39m - [34mdynamic-datasource - add a datasource named [master] success[0;39m 
+2022-09-16 10:00:43 [main] [34mINFO [0;39m [36mc.b.dynamic.datasource.DynamicRoutingDataSource[0;39m - [34mdynamic-datasource initial loaded [2] datasource,primary datasource named [master][0;39m 
+2022-09-16 10:00:46 [main] [34mINFO [0;39m [36mc.a.n.p.auth.spi.client.ClientAuthPluginManager[0;39m - [34m[ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.[0;39m 
+2022-09-16 10:00:46 [main] [34mINFO [0;39m [36mc.a.n.p.auth.spi.client.ClientAuthPluginManager[0;39m - [34m[ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.[0;39m 
+2022-09-16 10:00:48 [main] [34mINFO [0;39m [36morg.apache.coyote.http11.Http11NioProtocol[0;39m - [34mStarting ProtocolHandler ["http-nio-18001"][0;39m 
+2022-09-16 10:00:48 [main] [34mINFO [0;39m [36mc.a.cloud.nacos.registry.NacosServiceRegistry[0;39m - [34mnacos registry, DEFAULT_GROUP kylincloud-demo 172.31.51.62:18001 register finished[0;39m 
+2022-09-16 10:00:48 [main] [34mINFO [0;39m [36mcom.ebchinatech.kylincloud.KylinCloudDemo[0;39m - [34mStarted KylinCloudDemo in 12.534 seconds (JVM running for 14.961)[0;39m 
+2022-09-16 10:00:48 [main] [34mINFO [0;39m [36mc.a.cloud.nacos.refresh.NacosContextRefresher[0;39m - [34mlistening config: dataId=kylincloud-demo, group=DEFAULT_GROUP[0;39m 
+2022-09-16 10:00:48 [main] [34mINFO [0;39m [36mc.a.cloud.nacos.refresh.NacosContextRefresher[0;39m - [34mlistening config: dataId=kylincloud-demo-dev.yml, group=DEFAULT_GROUP[0;39m 
+2022-09-16 10:00:48 [main] [34mINFO [0;39m [36mc.a.cloud.nacos.refresh.NacosContextRefresher[0;39m - [34mlistening config: dataId=kylincloud-demo.yml, group=DEFAULT_GROUP[0;39m 
+2022-09-16 10:00:48 [RMI TCP Connection(1)-172.31.51.62] [34mINFO [0;39m [36mo.a.c.core.ContainerBase.[Tomcat].[localhost].[/][0;39m - [34mInitializing Spring DispatcherServlet 'dispatcherServlet'[0;39m 
+2022-09-16 10:04:03 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mc.a.cloud.nacos.registry.NacosServiceRegistry[0;39m - [34mDe-registering from Nacos Server now...[0;39m 
+2022-09-16 10:04:03 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mc.a.cloud.nacos.registry.NacosServiceRegistry[0;39m - [34mDe-registration finished.[0;39m 
+2022-09-16 10:04:04 [SpringApplicationShutdownHook] [34mINFO [0;39m [36msys-user[0;39m - [34m====关闭后台任务任务线程池====[0;39m 
+2022-09-16 10:04:04 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mc.b.dynamic.datasource.DynamicRoutingDataSource[0;39m - [34mdynamic-datasource start closing ....[0;39m 
+2022-09-16 10:04:04 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.alibaba.druid.pool.DruidDataSource[0;39m - [34m{dataSource-2} closing ...[0;39m 
+2022-09-16 10:04:04 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.alibaba.druid.pool.DruidDataSource[0;39m - [34m{dataSource-2} closed[0;39m 
+2022-09-16 10:04:04 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.alibaba.druid.pool.DruidDataSource[0;39m - [34m{dataSource-1} closing ...[0;39m 
+2022-09-16 10:04:04 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.alibaba.druid.pool.DruidDataSource[0;39m - [34m{dataSource-1} closed[0;39m 
+2022-09-16 10:04:04 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mc.b.dynamic.datasource.DynamicRoutingDataSource[0;39m - [34mdynamic-datasource all closed success,bye[0;39m 
